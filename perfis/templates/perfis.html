@@ -7,6 +7,6 @@
     </head>
     <body>
          <h1>Detalhe Perfil</h1>
-         nome: {{perfil.nome}}, email: {{perfil.email}}, telefone: {{perfil.telefone}}, empresa: {{perfil.nome_empresa}}
+       <p>  nome: {{perfil.nome}}, email: {{perfil.email}},telefone: {{ perfil.telefone|default:"Telefone não informado" }}, empresa: {{perfil.nome_empresa}}  </p>
     </body>
 </html>
