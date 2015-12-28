@@ -7,6 +7,8 @@
     </head>
     <body>
          <h1>Detalhe Perfil</h1>
-       <p>  nome: {{perfil.nome}}, email: {{perfil.email}},telefone: {{ perfil.telefone|default:"Telefone não informado" }}, empresa: {{perfil.nome_empresa}}  </p>
+       <p>  nome: {{perfil.nome}}, email: {{perfil.email}},telefone: {{ perfil.telefone|default:"Telefone não informado" }}, empresa: {{perfil.nome_empresa}}
+            <a href="{% url 'convidar' perfil.id %}">convidar</a>
+       </p>
     </body>
 </html>
