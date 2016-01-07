@@ -17,5 +17,28 @@
             <p>Nenhum Perfil encontrado</p>
         {% endif %}
     </div>
+    <!-- painel que exibe os convites recebidos -->
+    <div class="panel panel-default">
+        {% with total_convites=perfil_logado.convites_recebidos.count %}
+            {% if total_convites %}
+                <div class="panel-heading">
+                    <strong>Você tem {{ total_convites }} convite{{ total_convites| pluralize }} aguardando aprovação</strong>
+                </div>
+                <ul class="list-group">
+                    {% for convite in perfil_logado.convites_recebidos.all %}
+                        <li class="list-group-item">
+                            {{ convite.solicitante.nome }}
+                            <a href="#" class="pull-right">Aceitar</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <div class="panel-body">
+                    <p>Nenhum convite recebido</p>
+                </div>
+            {% endif %}
+        {% endwith %}
+    </div>
+    <!-- fim do painel que exibe os convites -->
 </div>
 {% endblock %}
