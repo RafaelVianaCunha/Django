@@ -1,17 +1,18 @@
-{% load static %}
+{% load staticfiles %}
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link href="{% static "styles/bootstrap.css" %}" rel="stylesheet">
-    <link href="{% static "styles/main.css" %}" rel="stylesheet">
-    <title>Title</title>
-</head>
- <body>
- <div class="container">
-     <!--Conteúdo da página -->
-     {% block body %}
-     {% endblock %}
- </div>
- </body>
+<html lang="pt">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>ConnectedIn</title>
+        <link href="{% static "styles/bootstrap.css" %}" rel="stylesheet">
+        <link href="{% static "styles/signin.css" %}" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container">
+            {% block body %}
+            {% endblock %} 
+        </div>
+        <script src="{% static "scripts/vendor/bootstrap-min.js" %}"></script>
+    </body>
 </html>
